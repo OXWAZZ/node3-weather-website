@@ -8,7 +8,7 @@ const forecast = (latitude, longitude, callback) => {
             ',' +
             longitude;
 
-        request({ url, json: true }, (error, { body }) => {
+        request({ url, json: true }, (error, { body } = {}) => {
             if (error) {
                 callback('Unable to connect!', undefined);
             } else if (body.error) {
